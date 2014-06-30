@@ -1,4 +1,10 @@
+
 source 'https://rubygems.org'
+
+ require 'rbconfig'
+if RbConfig::CONFIG['target_os'] =~ /mswin|mingw|cygwin/i
+  gem 'wdm', '>= 0.1.0'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
@@ -9,6 +15,7 @@ gem 'rails', '4.0.0'
 group :development do 
 	gem 'sqlite3'
 	gem 'rspec-rails', '2.9.0'
+	gem 'guard-rspec', '0.5.5'
 end
 
 group :production do 
@@ -37,10 +44,19 @@ end
 gem 'jquery-rails'
 
 group :test do
+	gem 'rspec-rails', '2.9.0'
 	gem 'capybara', '1.1.2'
+
+ 	gem 'rb-fchange', '0.0.5'
+	gem 'rb-notifu', '0.0.4'
+	#gem 'win32console'
+	gem 'guard-spork', '0.3.2'
+	gem 'spork', '0.9.0'
+
+
 end
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+#Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
