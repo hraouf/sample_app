@@ -1,1 +1,3 @@
-bundle exec rspec spec/requests/static_pages_spec.rb --drb
+cls
+bundle exec rspec spec/requests
+
